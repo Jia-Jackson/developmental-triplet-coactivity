@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 180
     strategy:
       fail-fast: false
-      max-parallel: 7
+      max-parallel: 8
       matrix:
         file: ${{ fromJSON(inputs.files) }}
     steps:
@@ -25,4 +25,4 @@ jobs:
         env:
           ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
           GH_ARCHIVE_VERIFICATION_TOKEN: ${{ github.token }}
-        run: python3 -u .github/scripts/zenodo_portable.py --original "${{ matrix.file }}"
+        run: python3 -u .github/scripts/zenodo_portable.py --item "${{ matrix.file }}"

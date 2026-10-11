@@ -166,7 +166,56 @@ def upload_original(name):
             future.result()
 
 
+def upload_volume(name):
+    import requests
+    archive.requests = requests
+    expected = archive.select_expected(manifest(), name)
+    if not expected.get('original_key'):
+        raise ValueError('Only a known original-ZIP byte volume can be independently resumed')
+    present = next((item for item in archive.entries() if item['key'] == name), None)
+    if present and present['status'] == 'completed':
+        validate_complete(present, expected)
+        print('Verified existing portable volume: ' + name, flush=True)
+        return
+    originals = json.loads(Path(__file__).with_name('zenodo_manifest.json').read_text())
+    original = archive.select_expected(originals, expected['original_key'])
+    release = archive.github_read('releases/tags/v1.0.0')
+    tag = archive.github_read('git/ref/tags/v1.0.0')
+    if release.get('draft') or tag['object']['sha'] != archive.COMMIT:
+        raise ValueError('Scientific source changed')
+    asset = next(item for item in release['assets'] if item['name'] == original['key'])
+    if asset['size'] != original['size'] or asset['digest'] != 'sha256:' + original['sha256']:
+        raise ValueError('Public original-ZIP digest mismatch')
+    start, size = expected['offset'], expected['size']
+    end = start + size - 1
+    with requests.get(asset['browser_download_url'], headers={'Range':f'bytes={start}-{end}'},
+                      timeout=(30,120)) as response:
+        response.raise_for_status()
+        payload = response.content
+        if response.status_code == 206:
+            if response.headers.get('Content-Range') != f'bytes {start}-{end}/{original["size"]}':
+                raise ValueError('Public byte-range response mismatch')
+        elif response.status_code == 200:
+            if len(payload) != original['size'] or hashlib.sha256(payload).hexdigest() != original['sha256']:
+                raise ValueError('Whole-file fallback does not match scientific release')
+            payload = payload[start:start+size]
+        else:
+            raise ValueError('Unexpected public source response')
+    if len(payload) != size or hashlib.sha256(payload).hexdigest() != expected['sha256']:
+        raise ValueError('Independent portable-volume source bytes mismatch')
+    print('Verified independent original-ZIP byte range: ' + name, flush=True)
+    standard_upload(expected, payload)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--original', required=True)
-    upload_original(parser.parse_args().original)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument('--original')
+    mode.add_argument('--item')
+    args = parser.parse_args()
+    if args.original:
+        upload_original(args.original)
+    elif args.item.endswith('.zip'):
+        upload_original(args.item)
+    else:
+        upload_volume(args.item)

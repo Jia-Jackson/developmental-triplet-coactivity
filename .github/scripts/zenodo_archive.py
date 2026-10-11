@@ -18,6 +18,7 @@ RECORD = '23299960'
 BASE = f'https://zenodo.org/api/records/{RECORD}/draft'
 REPO = 'Jia-Jackson/developmental-triplet-coactivity'
 COMMIT = '170c82d4bf76a49eef5f42165c490305c6abd7a3'
+PART_SIZE = 8 * 1024 * 1024
 
 
 def validate_completed(entry, expected):
@@ -31,6 +32,36 @@ def validate_resettable(entry, name):
     if (entry.get('key') != name or entry.get('status') != 'pending'
             or entry.get('size') not in (None, 0) or entry.get('checksum')):
         raise ValueError('Refusing to reset any stored or unrelated file')
+
+
+def chunk_ranges(size, part_size):
+    if size <= 0 or part_size <= 0:
+        raise ValueError('Positive file and part sizes are required')
+    return [(number + 1, offset, min(part_size, size - offset))
+            for number, offset in enumerate(range(0, size, part_size))]
+
+
+def is_resumable_multipart(entry, expected, part_size):
+    return (entry.get('key') == expected['key'] and entry.get('status') == 'pending'
+            and entry.get('size') == expected['size']
+            and entry.get('transfer', {}).get('type') == 'M'
+            and entry.get('transfer', {}).get('part_size') == part_size
+            and len(entry.get('links', {}).get('parts', [])) == len(chunk_ranges(expected['size'], part_size)))
+
+
+def await_checksum(entry, expected):
+    for attempt in range(120):
+        if entry.get('checksum') == expected['md5']:
+            validate_completed(entry, expected)
+            return entry
+        if (entry.get('status') != 'completed' or entry.get('size') != expected['size']
+                or (entry.get('checksum') and not entry['checksum'].startswith('multipart:'))):
+            raise ValueError('Completed archive file has an unexpected checksum or state')
+        if attempt % 6 == 0:
+            print('Waiting for Zenodo server-computed whole-file MD5: ' + expected['key'], flush=True)
+        time.sleep(10)
+        entry = next(item for item in entries() if item['key'] == expected['key'])
+    raise RuntimeError('Server checksum computation did not complete within the bounded wait')
 
 
 def api(url, method='GET', value=None):
@@ -57,7 +88,8 @@ def initialize(expected):
     name = expected['key']
     found = next((entry for entry in entries() if entry['key'] == name), None)
     if found and found['status'] == 'completed':
-        validate_completed(found, expected)
+        return await_checksum(found, expected)
+    if found and is_resumable_multipart(found, expected, PART_SIZE):
         return found
     if found:
         validate_resettable(found, name)
@@ -68,13 +100,74 @@ def initialize(expected):
         except RuntimeError:
             if any(item['key'] == name for item in entries()):
                 raise
-    created = api(BASE + '/files', 'POST', [{'key': name}])
+    ranges = chunk_ranges(expected['size'], PART_SIZE)
+    created = api(BASE + '/files', 'POST', [{'key': name, 'size': expected['size'],
+                                           'transfer': {'type': 'M', 'parts': len(ranges),
+                                                        'part_size': PART_SIZE}}])
     candidates = created.get('entries', []) if isinstance(created, dict) else []
     if not candidates:
         candidates = entries()
     fresh = next(item for item in candidates if item['key'] == name)
-    validate_resettable(fresh, name)
+    if not is_resumable_multipart(fresh, expected, PART_SIZE):
+        raise ValueError('Multipart file did not initialize with the exact expected size and part count')
     return fresh
+
+
+def multipart_transfer(expected, path, entry):
+    parts = {int(part['part']): part['url'] for part in entry['links']['parts']}
+    ranges = chunk_ranges(expected['size'], PART_SIZE)
+
+    def upload_part(part):
+        number, offset, length = part
+        endpoint = parts[number]
+        parsed = urllib.parse.urlparse(endpoint)
+        host = parsed.hostname or ''
+        if parsed.scheme != 'https' or not (host == 'zenodo.org' or host.endswith('.cern.ch')
+                                              or host.endswith('.amazonaws.com')):
+            raise ValueError('Unexpected multipart storage host')
+        # Signed storage URLs are never printed; the Zenodo PAT is sent only
+        # to Zenodo, never to a separate storage endpoint.
+        partial = path.with_name(path.name + f'.transport-part-{number}')
+        with path.open('rb') as source:
+            source.seek(offset)
+            payload = source.read(length)
+        if len(payload) != length:
+            raise ValueError('Multipart source range was truncated')
+        partial.write_bytes(payload)
+        quote = lambda value: '"' + str(value).replace('\\', '\\\\').replace('"', '\\"') + '"'
+        config = ['url = ' + quote(endpoint), 'request = "PUT"', 'upload-file = ' + quote(partial),
+                  'header = "Content-Type: application/octet-stream"',
+                  'header = "Expect: 100-continue"', 'connect-timeout = 30', 'max-time = 600',
+                  'expect100-timeout = 3', 'silent', 'show-error', 'http1.1',
+                  'write-out = "\\n%{http_code} %{size_upload}"']
+        if host == 'zenodo.org':
+            config.append('header = ' + quote('Authorization: Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN']))
+        for attempt in range(4):
+            response = subprocess.run(['curl', '-q', '--config', '-'],
+                                      input=('\n'.join(config) + '\n').encode(),
+                                      capture_output=True, timeout=630)
+            summary = response.stdout.decode(errors='replace').rsplit('\n', 1)[-1].split()
+            status = int(summary[0]) if summary else 0
+            if not response.returncode and status in (200, 201, 204) and int(summary[1]) == length:
+                partial.unlink()
+                return number
+            print(f'Retrying only transport part {number} of {expected["key"]}: HTTP {status}, curl {response.returncode}', flush=True)
+            if attempt == 3:
+                raise RuntimeError('Multipart transport failed; no signed URL or credential displayed')
+            time.sleep(8)
+
+    print(f'Multipart upload {expected["key"]}: {len(ranges)} transport parts', flush=True)
+    count = 0
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        futures = [pool.submit(upload_part, part) for part in ranges]
+        for future in as_completed(futures):
+            future.result()
+            count += 1
+            if count % 4 == 0 or count == len(ranges):
+                print(f'Transport parts acknowledged {expected["key"]}: {count}/{len(ranges)}', flush=True)
+    committed = api(entry['links']['commit'], 'POST')
+    await_checksum(committed, expected)
+    print('Archived and server-MD5-verified: ' + expected['key'], flush=True)
 
 
 def transfer(expected, asset, path, entry):
@@ -96,6 +189,9 @@ def transfer(expected, asset, path, entry):
             or 'md5:' + md5.hexdigest() != expected['md5']):
         raise ValueError('Downloaded release bytes differ from local verified file: ' + name)
     print('Downloaded and checksum-verified: ' + name, flush=True)
+    if entry.get('transfer', {}).get('type') == 'M':
+        multipart_transfer(expected, path, entry)
+        return
     for attempt in range(3):
         endpoint = entry['links']['content']
         if (urllib.parse.urlparse(endpoint).hostname != 'zenodo.org'

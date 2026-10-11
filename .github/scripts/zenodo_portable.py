@@ -61,6 +61,16 @@ def initialize_standard(expected):
     return found
 
 
+def remove_failed_empty_standard(expected, current):
+    if not is_empty_owned_standard(current, expected['key']):
+        raise ValueError('Refusing to remove any completed, stored or unrelated volume')
+    try:
+        archive.api(BASE + '/files/' + urllib.parse.quote(expected['key']), 'DELETE')
+    except RuntimeError:
+        if any(entry['key'] == expected['key'] for entry in archive.entries()):
+            raise
+
+
 def manifest():
     return json.loads(Path(__file__).with_name('zenodo_portable_manifest.json').read_text())
 
@@ -129,9 +139,8 @@ def standard_upload(expected, payload):
             if status == 400 and is_empty_owned_standard(current, expected['key']):
                 # Only this worker's failed empty ordinary-upload entry can
                 # retain a server-side upload lock after a gateway timeout.
-                archive.api(BASE + '/files/' + urllib.parse.quote(expected['key']), 'DELETE')
-                initialized = archive.api(BASE + '/files', 'POST', [{'key': expected['key']}])
-                found = next(entry for entry in initialized['entries'] if entry['key'] == expected['key'])
+                remove_failed_empty_standard(expected,current)
+                found = initialize_standard(expected)
                 print('Reset only failed empty owned volume: ' + expected['key'], flush=True)
             print(f'Ordinary upload retry {expected["key"]}: HTTP {status}, curl {result.returncode}', flush=True)
             if attempt == 3:

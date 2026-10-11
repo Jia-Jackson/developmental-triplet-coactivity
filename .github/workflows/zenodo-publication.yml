@@ -1,0 +1,17 @@
+name: Archive verified manuscript release on Zenodo
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install transfer dependency
+        run: python3 -m pip install --quiet requests
+      - name: Verify, transfer, and publish the manuscript archive
+        env:
+          ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
+        run: python3 -u .github/scripts/zenodo_archive.py

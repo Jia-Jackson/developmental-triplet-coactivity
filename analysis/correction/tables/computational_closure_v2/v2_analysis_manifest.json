@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "n_full_array_recordings": 143,
+  "n_source_longitudinal_wells": 18,
+  "analysis_specific_qc_counts": {
+    "instantaneous": {
+      "n_expected": 142,
+      "n_observed": 142,
+      "n_valid100": 142
+    },
+    "kinetic": {
+      "n_expected": 142,
+      "n_observed": 142,
+      "n_valid100": 142
+    },
+    "fixed12": {
+      "n_expected": 143,
+      "n_observed": 143,
+      "n_valid100": 143
+    },
+    "fixed16": {
+      "n_expected": 135,
+      "n_observed": 135,
+      "n_valid100": 135
+    },
+    "fixed20": {
+      "n_expected": 127,
+      "n_observed": 127,
+      "n_valid100": 127
+    }
+  },
+  "n_stability_recordings": 135,
+  "prediction_preprocessing": "Original27 compatibility global median plus pooled DIV-dependent masks; not leakage-free external validation",
+  "n_independent_cultures": 3,
+  "primary_bin_ms": 25,
+  "null_realizations": 100,
+  "outputs": [
+    {
+      "path": "tables\\computational_closure_v2\\v2_claim_gate_summary.csv",
+      "sha256": "1c9ed71f8792f61597d00c2e64f24ece1955728a0eaf625fd99292cb790b7b6f",
+      "bytes": 2969
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_key_statistical_findings.csv",
+      "sha256": "47509975d31c5f0e3fcf03748524da6917cb56359a5eaa328f91b04b6539ed37",
+      "bytes": 1092
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_hierarchical_adjacent_contrasts.csv",
+      "sha256": "cf0ead5aefe61d55596067662e30aedaac899cf90472a639e48e10426f73b581",
+      "bytes": 46043
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_activity_adjusted_adjacent_contrasts.csv",
+      "sha256": "87030cfb11f726839fb24f7bbc613ac8352079de33403e8c1c868fdec81c8da7",
+      "bytes": 16149
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_incremental_metrics.csv",
+      "sha256": "be39f13c69e82c0f1d49620ae26a6c93ec69d6cb8dcd428436e2eb065bdbdad5",
+      "bytes": 1724
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_null_deviation_one_sample_statistics.csv",
+      "sha256": "2046b0d28562383e374eb092317045c1e59b654b419c038446626d111dc8569c",
+      "bytes": 7353
+    },
+    {
+      "path": "tables\\computational_closure_v2\\v2_node_specification_hierarchical_contrasts.csv",
+      "sha256": "b8d5aa0f851916698d1b555f1d86ae3e0ec6706e2431f8fe6bf403d3576f2d90",
+      "bytes": 43939
+    }
+  ]
+}

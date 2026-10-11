@@ -1,0 +1,3 @@
+feature,decision,reason,original_nonmissing
+positive_residual_z,excluded_from_prediction,Numerically redundant with absolute_residual_z under exact K(t); the two columns differ only at floating-point roundoff.,142
+h1_infinite_deviation_z,excluded_from_prediction,"Endpoint-count z is mathematically undefined when the null SD is zero. This occurs for most recordings, so the feature was excluded rather than imputed.",142

@@ -1,0 +1,6 @@
+item,value,definition
+independent_cultures,3.0,"P1, P2, and P3"
+tracked_wells,18.0,Six wells per culture
+retained_recordings,143.0,One DIV35 recording excluded
+primary_bin_ms,25.0,Binary electrode-by-time representation
+triplet_identity,,"N3(t)=choose(K(t),3)"

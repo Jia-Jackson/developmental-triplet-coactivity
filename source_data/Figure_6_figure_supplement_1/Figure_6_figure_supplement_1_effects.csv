@@ -1,0 +1,7 @@
+family,outcome,label,standardized_effect,adjusted_p
+direct_25ms,triplet_support_mass,Triplet support,1.6500512342521212,5.190842574434648e-06
+direct_25ms,triplet_repeated5_density,Repeated triplets,3.1616284861234645,1.698545940399894e-20
+direct_25ms,h1_total_persistence_capped,Direct H1,0.9477694849765794,0.011429650447626
+conditioned_triplet_residual,log1p_absolute_residual_mass,Residual mass,2.144061380437244,8.804825693186431e-10
+conditioned_triplet_residual,absolute_residual_z,Residual z,0.1213888784399485,0.835022510044474
+conditioned_topology_deviation,z_h1_total_persistence_capped,H1 persistence z,0.420604820516188,0.2415181500405991

@@ -1,0 +1,17 @@
+null_family,metric,DIV,n,null_value,alternative,median,wilcoxon_statistic,raw_p,adjusted_p
+instantaneous,z,14,7,0.0,greater,-1.960121752573611,0.0,1.0,1.0
+instantaneous,z,21,0,0.0,greater,,,,
+instantaneous,z,28,0,0.0,greater,,,,
+instantaneous,z,35,0,0.0,greater,,,,
+instantaneous,z,42,0,0.0,greater,,,,
+instantaneous,z,49,0,0.0,greater,,,,
+instantaneous,z,56,0,0.0,greater,,,,
+instantaneous,z,63,3,0.0,greater,0.4765125603627739,5.0,0.25,0.5
+kinetic,z,14,6,0.0,greater,0.09002610287650199,14.0,0.28125,0.5
+kinetic,z,21,0,0.0,greater,,,,
+kinetic,z,28,0,0.0,greater,,,,
+kinetic,z,35,0,0.0,greater,,,,
+kinetic,z,42,0,0.0,greater,,,,
+kinetic,z,49,0,0.0,greater,,,,
+kinetic,z,56,0,0.0,greater,,,,
+kinetic,z,63,2,0.0,greater,1.8446833411866925,2.0,0.5,0.5

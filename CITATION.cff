@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the associated manuscript and the exact archived data/code release."
+type: dataset
+title: "Developmental triplet coactivity in mouse cortical cultures overlaps lower-order and temporal structure"
+version: 1.0.0
+date-released: 2026-10-11
+repository-code: "https://github.com/Jia-Jackson/developmental-triplet-coactivity"
+doi: "10.5281/zenodo.23299960"
+authors:
+  - family-names: Jia
+    given-names: Xiaoli
+  - family-names: Gong
+    given-names: Qichao
+  - family-names: Liu
+    given-names: Xueqing
+  - family-names: Ali
+    given-names: Tahir
+  - family-names: Li
+    given-names: Shupeng
+  - family-names: Feng
+    given-names: Jinxing
+# Archive identifier reserved in Zenodo; it activates when the record is published.

@@ -1,0 +1,17 @@
+null_family,DIV,n_recordings,n_z_available,n_z_undefined_zero_variance,n_zero_variance_exact_match,n_zero_variance_observed_differs
+instantaneous,14,18,7,11,11,0
+instantaneous,21,18,0,18,18,0
+instantaneous,28,18,0,18,18,0
+instantaneous,35,17,0,17,17,0
+instantaneous,42,18,0,18,18,0
+instantaneous,49,18,0,18,18,0
+instantaneous,56,18,0,18,18,0
+instantaneous,63,17,3,14,14,0
+kinetic,14,18,6,12,12,0
+kinetic,21,18,0,18,18,0
+kinetic,28,18,0,18,18,0
+kinetic,35,17,0,17,17,0
+kinetic,42,18,0,18,18,0
+kinetic,49,18,0,18,18,0
+kinetic,56,18,0,18,18,0
+kinetic,63,17,2,15,14,1

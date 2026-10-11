@@ -1,0 +1,126 @@
+[
+  {
+    "model": "kinetic_conditioned_k",
+    "outcome": "triplet_repeated5_density",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 5.46542913643707e-09
+    }
+  },
+  {
+    "model": "kinetic_conditioned_k",
+    "outcome": "h1_total_persistence_capped",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.3789239396190229e-06
+    }
+  },
+  {
+    "model": "kinetic_conditioned_k",
+    "outcome": "h1_infinite_count",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.3481102175607716e-11
+    }
+  },
+  {
+    "model": "pairwise_conditioned_k_100",
+    "outcome": "triplet_repeated5_density",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 4.294431644129467e-09
+    }
+  },
+  {
+    "model": "pairwise_conditioned_k_100",
+    "outcome": "h1_total_persistence_capped",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 5.332776230801885e-07
+    }
+  },
+  {
+    "model": "pairwise_conditioned_k_100",
+    "outcome": "h1_infinite_count",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 2.1932236282684124e-10
+    }
+  },
+  {
+    "model": "kinetic_conditioned_k",
+    "outcome": "log1p_absolute_residual_mass",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "lbfgs",
+      "warnings": [
+        "Random effects covariance is singular",
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 3.405369681030165e-07
+    }
+  },
+  {
+    "model": "kinetic_conditioned_k",
+    "outcome": "absolute_residual_z",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [],
+      "random_intercept_variance": 3.307296829593051
+    }
+  },
+  {
+    "model": "pairwise_conditioned_k_100",
+    "outcome": "log1p_absolute_residual_mass",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 6.31527647452997e-11
+    }
+  },
+  {
+    "model": "pairwise_conditioned_k_100",
+    "outcome": "absolute_residual_z",
+    "method": "mixedlm",
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 4.039489938369245e-08
+    }
+  }
+]

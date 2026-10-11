@@ -1,0 +1,7 @@
+dataset,left,right,stage
+workflow_nodes,P1-P3 cultures,18 longitudinal wells,biological hierarchy
+workflow_nodes,64-electrode MEA,25-ms binary activity,encoding
+workflow_nodes,Direct triplets,Burst stratification,observed structure
+workflow_nodes,Instantaneous null,Kinetic null,lower-order constraints
+workflow_nodes,Hierarchical models,LOCO prediction,validation
+workflow_nodes,Node/bin/duration,Claim gates,robustness

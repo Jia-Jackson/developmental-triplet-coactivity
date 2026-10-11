@@ -1,0 +1,1003 @@
+[
+  {
+    "recording": "WT_DIV14_P1_A1",
+    "n_spikes": 21280,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "48152d6853c41c5751b4b01717fcf5a03c497e102195f82623baf789f946e634"
+  },
+  {
+    "recording": "WT_DIV14_P1_A2",
+    "n_spikes": 25669,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "842bfa9713578eb172a4d88800fea3329920dc0e8769f140fee277c174556e67"
+  },
+  {
+    "recording": "WT_DIV14_P1_A3",
+    "n_spikes": 29151,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0153614362f4b17f9db485918b1f4c757f78e88b2dae80cdbb0705e0dc70b1a5"
+  },
+  {
+    "recording": "WT_DIV14_P1_B1",
+    "n_spikes": 26501,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "bef32e257260ec60c639c914adba89bf8e1bcd6fb6b21c8f357f12a487a546fd"
+  },
+  {
+    "recording": "WT_DIV14_P1_B2",
+    "n_spikes": 8329,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "38bf6c72fd5e9b8e0d62ffcd059781cb66a004621299d191ed782839fdfcfd2a"
+  },
+  {
+    "recording": "WT_DIV14_P1_B3",
+    "n_spikes": 34775,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "4b4ae87bc6a66252b0edb41e865a3d23a224d7bd41c7a1e63ca3d0bbc555bc3e"
+  },
+  {
+    "recording": "WT_DIV14_P2_A1",
+    "n_spikes": 11502,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "2f9d556a15548522e2b3ec46f813775f4d14750c490a78eea86cdf5458a9e796"
+  },
+  {
+    "recording": "WT_DIV14_P2_A2",
+    "n_spikes": 9405,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a548bd79081a70ff9b8576701efa11e9d33826e97537ae35ec583745bd571913"
+  },
+  {
+    "recording": "WT_DIV14_P2_A3",
+    "n_spikes": 13523,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "9cf5243746592ed09136c1e1111d98f230700d7781f730f62885f3d03a1f1586"
+  },
+  {
+    "recording": "WT_DIV14_P2_B1",
+    "n_spikes": 12680,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "93f7b75fa1ac752e0425923ff1eb49b4b624575e5fd4a0909667878274e30a4f"
+  },
+  {
+    "recording": "WT_DIV14_P2_B2",
+    "n_spikes": 10266,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "83082bbe13f3307de3579610d531c757458947fca75f088f2d3837de6cbb2171"
+  },
+  {
+    "recording": "WT_DIV14_P2_B3",
+    "n_spikes": 17442,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "e660dfab9e5a21647012b1b273b808c142620c33c230f3de529e9593df560fb8"
+  },
+  {
+    "recording": "WT_DIV14_P3_A1",
+    "n_spikes": 79154,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b1e6c131dea148f50184660b2b7dbfb8f0e74c501c10a3571ae7914f0da5df44"
+  },
+  {
+    "recording": "WT_DIV14_P3_A2",
+    "n_spikes": 94575,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b7329d7405e15bca9e4da543989f875cfa6ee06fe968ae0c157371bccbabf2d0"
+  },
+  {
+    "recording": "WT_DIV14_P3_A3",
+    "n_spikes": 96123,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "4e82da553443cd857afa4e7c08d067a5151b27cc75cc5552297a6b528e30d961"
+  },
+  {
+    "recording": "WT_DIV14_P3_B1",
+    "n_spikes": 111207,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "106a872c1ef7af43c7f0128f2bdafb3e0d9ef780eeb674d9ac5ba7c76866c20c"
+  },
+  {
+    "recording": "WT_DIV14_P3_B2",
+    "n_spikes": 111317,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "10c1950f428801edca7f6565621d652c698fe493b171050fdee39fd1941e3efb"
+  },
+  {
+    "recording": "WT_DIV14_P3_B3",
+    "n_spikes": 235688,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "fdcdc2fb280a0429976287ef73a149b5fecc5c8008c8f05a6eacc9779047e1e8"
+  },
+  {
+    "recording": "WT_DIV21_P1_A1",
+    "n_spikes": 47085,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b5a692f5a9e22ef83d7e5e4e52ecd31813a40c5c1f784488e8e8efbc8b87263d"
+  },
+  {
+    "recording": "WT_DIV21_P1_A2",
+    "n_spikes": 164661,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "eaddcc2d0f66f3a483e4f2f4dc1425babff8e0166435b1048947badab2c60e32"
+  },
+  {
+    "recording": "WT_DIV21_P1_A3",
+    "n_spikes": 133575,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "479a01621ecb1c6d07c44dbb27299c5a43b2942b612a9e52dbbeb539d39c34e1"
+  },
+  {
+    "recording": "WT_DIV21_P1_B1",
+    "n_spikes": 99540,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f46c7896150d97b40ff24269a78e3439cffe4e2c7bde0eba70aecf121612f3c7"
+  },
+  {
+    "recording": "WT_DIV21_P1_B2",
+    "n_spikes": 91181,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "711df2264f18f3eb4061d96a4519069a65874a8614d7ad4822f617a614196213"
+  },
+  {
+    "recording": "WT_DIV21_P1_B3",
+    "n_spikes": 135126,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a193abb7de9e64eb71e7364ac29ec7e1ff3d4a23e025c88c813cc95ef29e1957"
+  },
+  {
+    "recording": "WT_DIV21_P2_A1",
+    "n_spikes": 185910,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b0061e16eee240d17631d0117f45de9ffe604c74345efb81d700d0c50d5abd4a"
+  },
+  {
+    "recording": "WT_DIV21_P2_A2",
+    "n_spikes": 219799,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "97e8b49a78ad2ec04fb29c36acde271d9df669a160ede63c6f907d3cd2ee4cb6"
+  },
+  {
+    "recording": "WT_DIV21_P2_A3",
+    "n_spikes": 153501,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "63cbace182b510184b2c8afd9a804b18c4eeddfadfbe7fd7d7fe9728e27b0935"
+  },
+  {
+    "recording": "WT_DIV21_P2_B1",
+    "n_spikes": 141647,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "19c7293dc7c7d0855038f7379a49bd8d0f71f4d721ca7be7567589ec889c2c63"
+  },
+  {
+    "recording": "WT_DIV21_P2_B2",
+    "n_spikes": 146848,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c8c01604841bdeaabd174a398a050a4ab0ddf59cde55e176d0bc9a159aae6462"
+  },
+  {
+    "recording": "WT_DIV21_P2_B3",
+    "n_spikes": 114633,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "395edc8bde311238a6e56fbcb24cae912aae984bed25dc9f2d6840506282e1b2"
+  },
+  {
+    "recording": "WT_DIV21_P3_A1",
+    "n_spikes": 112851,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "51e73a5b5af3d0865789b8d014fcaa5a8898fa70aee8a3f6f41840f309a96221"
+  },
+  {
+    "recording": "WT_DIV21_P3_A2",
+    "n_spikes": 101499,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "d7e8db7f02f81ebf977fb1ebb77b381fe0eac6200ea8549a51bac49819a14b7d"
+  },
+  {
+    "recording": "WT_DIV21_P3_A3",
+    "n_spikes": 136578,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "abc6d37a12b808a41f83e0f68466012384e597d8ef842c30d4d06eb1497c454e"
+  },
+  {
+    "recording": "WT_DIV21_P3_B1",
+    "n_spikes": 109779,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "723d62e498446f1cd8a5d178798099493a226a288d326206747a3e2cebdffa56"
+  },
+  {
+    "recording": "WT_DIV21_P3_B2",
+    "n_spikes": 115030,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "9caaa29633b77a57c992fc6df013af3e0a9d3d9df2722094a8dada412f2aa028"
+  },
+  {
+    "recording": "WT_DIV21_P3_B3",
+    "n_spikes": 165081,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c646c83084810b5b470a4006f73623c03fd478d0b2156cfb459db05a6afa1b62"
+  },
+  {
+    "recording": "WT_DIV28_P1_A1",
+    "n_spikes": 321013,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "83f07185e860c4daaca5b3083b45ff580b7388105968899b0d852dd5698eec1b"
+  },
+  {
+    "recording": "WT_DIV28_P1_A2",
+    "n_spikes": 71698,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c1b1c29c3180a5e85c20b862fec3c4956b003450ff1c138a9cd8d6e6cb5b72b7"
+  },
+  {
+    "recording": "WT_DIV28_P1_A3",
+    "n_spikes": 90845,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "951d0a0635626ea72bd2c217f996f1b385cc01d6b2ba53316eebf62337453b7c"
+  },
+  {
+    "recording": "WT_DIV28_P1_B1",
+    "n_spikes": 144495,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "33808642eb317246e43ba1c77c4ee33a2571662c369f25b067b087d42f9898ca"
+  },
+  {
+    "recording": "WT_DIV28_P1_B2",
+    "n_spikes": 193320,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a571ee7a7433860f223a81abcdc15360bb0a042865a31689b1c2b4b83e84a2fc"
+  },
+  {
+    "recording": "WT_DIV28_P1_B3",
+    "n_spikes": 168590,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "569d331d43a0c2085f13e483b5ed63a4f3209d9b1cf4daa85353811099f508de"
+  },
+  {
+    "recording": "WT_DIV28_P2_A1",
+    "n_spikes": 181785,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "5add23b1dc9e833dd4c773f4e5399a75e85b8d05eb3c05ec71f2c09b82136661"
+  },
+  {
+    "recording": "WT_DIV28_P2_A2",
+    "n_spikes": 192369,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "50355cfbe68795a66e93e24325df1c4a08edb5ebd8742e7429f4696119d96ff5"
+  },
+  {
+    "recording": "WT_DIV28_P2_A3",
+    "n_spikes": 164920,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f9969f3074575feb95a47e0337344672ce6aec4f58d1196a9e5044649127c6f1"
+  },
+  {
+    "recording": "WT_DIV28_P2_B1",
+    "n_spikes": 160383,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f8a5faab3477a123450923db02e9abf02aabde6e6c39a904b1663b4034b79bec"
+  },
+  {
+    "recording": "WT_DIV28_P2_B2",
+    "n_spikes": 155246,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "7bdc826e40f2b3b912cfcafa1d4ed64a28209bfd8f3dd8af8c1e0e7051a68e27"
+  },
+  {
+    "recording": "WT_DIV28_P2_B3",
+    "n_spikes": 109607,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "fe696a9e76e89678b72b2d037f4944fe1687ee813eb325f5fc5b2ad1b3478f19"
+  },
+  {
+    "recording": "WT_DIV28_P3_A1",
+    "n_spikes": 100524,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "bce0b8fd1e7fc5eea05986dd836093ca1e9f2cb5c4c2ff3e388558cd1400638d"
+  },
+  {
+    "recording": "WT_DIV28_P3_A2",
+    "n_spikes": 85297,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "90c99c7aa62341378dbba3750dd16f8b4f0a511992bd90a5a1fe8509d67e6b24"
+  },
+  {
+    "recording": "WT_DIV28_P3_A3",
+    "n_spikes": 109646,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "2b7584e45f75b8eab9eb2e08262dafda06990853d12c7114db2b6f5b0da3781d"
+  },
+  {
+    "recording": "WT_DIV28_P3_B1",
+    "n_spikes": 265144,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "8c28b9eb7bb65f1675b914c2b9b005a108d3d8e47cba91dcfb40ff7ecd87407c"
+  },
+  {
+    "recording": "WT_DIV28_P3_B2",
+    "n_spikes": 95777,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6cbcbaa1b7a45633478f72b2f17ce9b1f4e5137a3e5f91d4e9bfcf4cc352e636"
+  },
+  {
+    "recording": "WT_DIV28_P3_B3",
+    "n_spikes": 136550,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c8470626f916bc0163bf5e81c02ef3b35397cb97caec0c4a7d9cd2c6dc93309d"
+  },
+  {
+    "recording": "WT_DIV35_P1_A1",
+    "n_spikes": 195005,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0ccea4043633856249ecfdd25a34980fd94d403330549b389fe75a0835d0afe2"
+  },
+  {
+    "recording": "WT_DIV35_P1_A2",
+    "n_spikes": 91179,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "fd5c2f0d0696196c1a1c382d5aaa7a331da9ed79ca13da1db4fda29761d0f4ea"
+  },
+  {
+    "recording": "WT_DIV35_P1_A3",
+    "n_spikes": 195987,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c79ed3aff6b144673ee608628e6964ddcacec2cfd5f6e18aefe0118b661649cc"
+  },
+  {
+    "recording": "WT_DIV35_P1_B1",
+    "n_spikes": 113080,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "84023d10e040fce3d5ba3a4d5b39bcc51e82807cb69bcac2f15293b93a4bcc05"
+  },
+  {
+    "recording": "WT_DIV35_P1_B2",
+    "n_spikes": 121876,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "981741c50d682ef16d5fb6a4e894f9f5042fd90c2b480bf27957b0b0a8fc0ace"
+  },
+  {
+    "recording": "WT_DIV35_P1_B3",
+    "n_spikes": 287209,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "7ded81b2e13f8378a001262ca0cbf07e3b1ff9a2e870f45bb00c8233b1aa97b8"
+  },
+  {
+    "recording": "WT_DIV35_P2_A2",
+    "n_spikes": 164627,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "64e19a41e5a0b3cde9d343d1974db8cd08ec55e5a36535f2851cdd24892dd18a"
+  },
+  {
+    "recording": "WT_DIV35_P2_A3",
+    "n_spikes": 76824,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "eeaf68bce7840ba9dab1b9d044cad8efead9d027c1f8ffe881e3dc205b088f60"
+  },
+  {
+    "recording": "WT_DIV35_P2_B1",
+    "n_spikes": 64336,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6a2800fe447268a8ee1d5558844e33bca2763d8d5c5c3779528254140a8d3ce2"
+  },
+  {
+    "recording": "WT_DIV35_P2_B2",
+    "n_spikes": 108971,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c5a312b601cb8d67ce7d6ff5a8ecf0972fa5a955d8c326e6d36e29fdbbfab664"
+  },
+  {
+    "recording": "WT_DIV35_P2_B3",
+    "n_spikes": 162563,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "8bf0bfcff5511f7ee9db4595b13a47df585bad7935e30a7d422a0d485f253b89"
+  },
+  {
+    "recording": "WT_DIV35_P3_A1",
+    "n_spikes": 87519,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "1ef8a0711548f4fe8316971dca7543f856e641ccb3c8818a3dfcb603d0fd7d53"
+  },
+  {
+    "recording": "WT_DIV35_P3_A2",
+    "n_spikes": 59688,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "85886ef208e28e6ad2f99f59c839859a7440f6ab3ecd25654de70c789654c10f"
+  },
+  {
+    "recording": "WT_DIV35_P3_A3",
+    "n_spikes": 81891,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c5780f65e014c5b9cde1d32c384140188a6a50812f8e0314360ddb3c3f772d99"
+  },
+  {
+    "recording": "WT_DIV35_P3_B1",
+    "n_spikes": 82278,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6b181bbd138837e5fd5009acf77ad9a640577b308fc740c94c8a57e934516f91"
+  },
+  {
+    "recording": "WT_DIV35_P3_B2",
+    "n_spikes": 69541,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f535c779880363a3885b9b390390c6cc86da8628a3883bdf0f0bd9e0bdd26016"
+  },
+  {
+    "recording": "WT_DIV35_P3_B3",
+    "n_spikes": 86088,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "227a9c3ce8379c3d47e217629ceca39bdcc095c86b4233149d0318706ecb98f3"
+  },
+  {
+    "recording": "WT_DIV42_P1_A1",
+    "n_spikes": 248485,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "35c5e1aac1b05b2f8a0e6c98cac421a4e17304a69b517627018d18e5e5bad43f"
+  },
+  {
+    "recording": "WT_DIV42_P1_A2",
+    "n_spikes": 247627,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6473418d6615dd5fc9f4f0efd8920acb3b8e387e262940e47fb32c6fcefb4387"
+  },
+  {
+    "recording": "WT_DIV42_P1_A3",
+    "n_spikes": 179997,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0bc1a45286e7c353b73fa23e6a69cacc39783cdaa214dab73167b5ce3a7293a1"
+  },
+  {
+    "recording": "WT_DIV42_P1_B1",
+    "n_spikes": 215371,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6ec58040959ba63909434d9325217a5a9b9f186e631af40e70be37ef7bd5b53b"
+  },
+  {
+    "recording": "WT_DIV42_P1_B2",
+    "n_spikes": 231903,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "cdf12ba7af97d9583f1c8acadb9be81993e578f120f8b8cee3dfd33d333c2a3e"
+  },
+  {
+    "recording": "WT_DIV42_P1_B3",
+    "n_spikes": 220551,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "8d2ba2db3393ec3c62e3377f9f2981dcf7f44b9d41a93ed5d15100373a6c432f"
+  },
+  {
+    "recording": "WT_DIV42_P2_A1",
+    "n_spikes": 101015,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "1d5c76f7356a24e2c215890c704fcfd6129436ca6ddfa7f8833a54861b33e228"
+  },
+  {
+    "recording": "WT_DIV42_P2_A2",
+    "n_spikes": 117307,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "87cdd0b67bb9b6b1fd48e61e0dd1ac7f4fca70c674a73f8b729782ca2078499c"
+  },
+  {
+    "recording": "WT_DIV42_P2_A3",
+    "n_spikes": 121164,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b9483160df2f3ccee33e5ba275fdb89442c8c9fb19e3cf4be419e71d4627c70e"
+  },
+  {
+    "recording": "WT_DIV42_P2_B1",
+    "n_spikes": 68972,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "408b0ced5648b0eafb9c356b4f9b5af97d4cd7a81b566215f515e136f4a4c165"
+  },
+  {
+    "recording": "WT_DIV42_P2_B2",
+    "n_spikes": 124129,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "63eec2cb979f46d490956433443864f088e10557089e6044defeee1db3101a3b"
+  },
+  {
+    "recording": "WT_DIV42_P2_B3",
+    "n_spikes": 114596,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "19460439bba8b5310e72cff57783a0970c492e060c2db7a6afc8278ae6d69578"
+  },
+  {
+    "recording": "WT_DIV42_P3_A1",
+    "n_spikes": 50640,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "5acf1757fb48b225098ecdf277364a597f71b28630ac04b1850e9a89fe99e5dd"
+  },
+  {
+    "recording": "WT_DIV42_P3_A2",
+    "n_spikes": 36910,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "79b5c534f329ef299d0692032a835b50771bf1ec48574a57e409217833e4a111"
+  },
+  {
+    "recording": "WT_DIV42_P3_A3",
+    "n_spikes": 38663,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "2854c1ce43c0ef8eba7e133354238f3b7eea7fff966174d9cf12bf678105980d"
+  },
+  {
+    "recording": "WT_DIV42_P3_B1",
+    "n_spikes": 45348,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "6395b026900da537209335fc3bb09b880ac385eb04759d5a21939f607a520a98"
+  },
+  {
+    "recording": "WT_DIV42_P3_B2",
+    "n_spikes": 50984,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "3c6f361c006c231c5d7077ef9f3066ca6647f4abffe9cc01a1c25e43e472ee58"
+  },
+  {
+    "recording": "WT_DIV42_P3_B3",
+    "n_spikes": 123690,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "2f52e2b12a76371352d5a8c5ffd910bb05e5fa3e864036c385282b0c18216a71"
+  },
+  {
+    "recording": "WT_DIV49_P1_A1",
+    "n_spikes": 255045,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f13039fe03147a02c7c3eebefa42e752e96748ffaa188a83bf65c47be0f051ab"
+  },
+  {
+    "recording": "WT_DIV49_P1_A2",
+    "n_spikes": 165162,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "9613745b1c46e2d477efa441472a8c2b32a81dfcee4e8b5f27be8d4334da2282"
+  },
+  {
+    "recording": "WT_DIV49_P1_A3",
+    "n_spikes": 282224,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "5570a2f05afea0e9a01a9d355e072d862bd7bd82ddf575e1d6bf2fb617c4e3fc"
+  },
+  {
+    "recording": "WT_DIV49_P1_B1",
+    "n_spikes": 280811,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a1d95744c9dde3fec447a1c8e543c7c9b398f1792a1e3bab436eba212e9625d8"
+  },
+  {
+    "recording": "WT_DIV49_P1_B2",
+    "n_spikes": 249636,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "e7cc14e98dad1ee6741cc40f2fb1b9f6078d02ca8095024dfc4be6e68c68342f"
+  },
+  {
+    "recording": "WT_DIV49_P1_B3",
+    "n_spikes": 223809,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "da36c496cf6f01b7b091abc4bed0ea19c70eb660fa9d7458a8df97c48a1a3abd"
+  },
+  {
+    "recording": "WT_DIV49_P2_A1",
+    "n_spikes": 121161,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "7f324a4b441813f74241877c72f70f7d84016f6108798c2891fda28730b641d8"
+  },
+  {
+    "recording": "WT_DIV49_P2_A2",
+    "n_spikes": 97376,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "44dcba16acbd03c94f75bc6998c7e0470beee0c2bbe16ff1dc7f37b6b4a35855"
+  },
+  {
+    "recording": "WT_DIV49_P2_A3",
+    "n_spikes": 146396,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "8be8df82fe01a7e98ed95ddab85a5e36499b45de9b77b520ddb2f22df77ddf7d"
+  },
+  {
+    "recording": "WT_DIV49_P2_B1",
+    "n_spikes": 63568,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c7f4510f02466329245e9b6762aec9ceee430f15364290ae29b83a75d5279f9a"
+  },
+  {
+    "recording": "WT_DIV49_P2_B2",
+    "n_spikes": 65923,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "9809b66338b7e5462ca9f34c281c32aa6dfe3df250c94b60a98ce53622bfdb88"
+  },
+  {
+    "recording": "WT_DIV49_P2_B3",
+    "n_spikes": 232519,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "53d8e05457775248fb1a345780a043f77c1a21a8adf2765cc5699368a27025db"
+  },
+  {
+    "recording": "WT_DIV49_P3_A1",
+    "n_spikes": 43068,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "758f58d4baaa8c68ce27492b6654bbec8e6b744437651ae9e3a0372516e2ee72"
+  },
+  {
+    "recording": "WT_DIV49_P3_A2",
+    "n_spikes": 57693,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a1c1c9df4a15938728c6db79252e51f8b5f58e6117d0646e0fdfc97ce924396e"
+  },
+  {
+    "recording": "WT_DIV49_P3_A3",
+    "n_spikes": 69292,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "e2ede0d42c959860b41993cc095da026663e29342f41e1513407fc8729581406"
+  },
+  {
+    "recording": "WT_DIV49_P3_B1",
+    "n_spikes": 57211,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f3a9c80d6e4041f580fdd7204696c2f184c0a1cba13aaa8f30d355485e986517"
+  },
+  {
+    "recording": "WT_DIV49_P3_B2",
+    "n_spikes": 53035,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0127c8816d296fce9dfe021b855eb0c7402fc6ec58aaa9026dc9e30c65737aa9"
+  },
+  {
+    "recording": "WT_DIV49_P3_B3",
+    "n_spikes": 71372,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "c58f6f6e0f26439a7b5dbd196c159f71b066e705084337bbd596ab12fb5358ff"
+  },
+  {
+    "recording": "WT_DIV56_P1_A1",
+    "n_spikes": 75370,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "d73f02c8be722249a9adf6387c549ce043b09d4a8d18c18ea779ae27ae6c8ca9"
+  },
+  {
+    "recording": "WT_DIV56_P1_A2",
+    "n_spikes": 124965,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "3ec01b068417ef93f9ff2dc60841c7a5a7ea0bce875c54207d9ee9664b73a4f3"
+  },
+  {
+    "recording": "WT_DIV56_P1_A3",
+    "n_spikes": 135677,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0f3d3a28b2245b0375d43266757f50c79b9e5e2a41ad0b4cf2d8c790c494bb0c"
+  },
+  {
+    "recording": "WT_DIV56_P1_B1",
+    "n_spikes": 106612,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "44b35c8a02194955408b3e7046bb4b417385c507c8f1a73462a65da9f07541f6"
+  },
+  {
+    "recording": "WT_DIV56_P1_B2",
+    "n_spikes": 99128,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "65d463e3e27a4aefa8184fabe9ff16a8e25eb7e54ecabab0a98b9d16903a759c"
+  },
+  {
+    "recording": "WT_DIV56_P1_B3",
+    "n_spikes": 146926,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "53425d5eef0f7266e9edd7bfb066b92359e2f0e0115662a5622da304cbe95f3f"
+  },
+  {
+    "recording": "WT_DIV56_P2_A1",
+    "n_spikes": 71759,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "8d65b1de2c5a10c70b94e683834f516a1afcc25e72fcd3814c891ce0e4c72510"
+  },
+  {
+    "recording": "WT_DIV56_P2_A2",
+    "n_spikes": 61680,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "4b9b6799e9d9d90535fdb8b0c4a324bc9dc4345bb26ede2d7c28a9bd987a77bd"
+  },
+  {
+    "recording": "WT_DIV56_P2_A3",
+    "n_spikes": 61369,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "71b846e6984eefb550d5f587f26ed494fed17a4da1a1a373203850695ef7c780"
+  },
+  {
+    "recording": "WT_DIV56_P2_B1",
+    "n_spikes": 81395,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "45526f1e5dc823f297dc5fd07590abf98a133a57360a10f735d98c97ad6b43f0"
+  },
+  {
+    "recording": "WT_DIV56_P2_B2",
+    "n_spikes": 156194,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b21582f3452d4ac6d383847cca252ddfaf539d26bb08152b6ecc280d993145f1"
+  },
+  {
+    "recording": "WT_DIV56_P2_B3",
+    "n_spikes": 167052,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "3132c3c2648f04d7a694f15bd2740fbb38608b6887404a0328aa808accf8c9ab"
+  },
+  {
+    "recording": "WT_DIV56_P3_A1",
+    "n_spikes": 100859,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "0a69a41e48acbf74dc73286528c861f9079729b59e35a9e380336c313727c8e9"
+  },
+  {
+    "recording": "WT_DIV56_P3_A2",
+    "n_spikes": 72229,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "5d5e1e96c5b90c91f2b0a2524391d2884b088b903129718ac7127b6281dda998"
+  },
+  {
+    "recording": "WT_DIV56_P3_A3",
+    "n_spikes": 88528,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "714738d5efa6614db8aa7dff7b579dec02d7e4cee810648b11d0e2a7b185c5fa"
+  },
+  {
+    "recording": "WT_DIV56_P3_B1",
+    "n_spikes": 68276,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "7cdfcca492b372058594b155bcb0bc0eb324b2cf655e26ffde1b06c7df16f8e2"
+  },
+  {
+    "recording": "WT_DIV56_P3_B2",
+    "n_spikes": 64336,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "72150cb142761cf91d04614d236df8b6afd3fa12b7d2e5a8478b3ed124b32ba0"
+  },
+  {
+    "recording": "WT_DIV56_P3_B3",
+    "n_spikes": 75170,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "a3cf219e9ba19ee868b7b7a6dd8358fe666ac58fb382a46afe4291d539d37293"
+  },
+  {
+    "recording": "WT_DIV63_P1_A1",
+    "n_spikes": 216620,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "3ba82d37f6f496b9097478095becd225d2acff3c897d4963133a641293b99880"
+  },
+  {
+    "recording": "WT_DIV63_P1_A2",
+    "n_spikes": 157785,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "94b9c8a1f6d1c19bfc33b6940d2f175d16885ebc65d7352db94f1d4ddf6cce6d"
+  },
+  {
+    "recording": "WT_DIV63_P1_A3",
+    "n_spikes": 296982,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "4b63762e3b5ae7e0a5acbce8f8ce89401b4a3347ca40e7596d44ab23f3d56f92"
+  },
+  {
+    "recording": "WT_DIV63_P1_B1",
+    "n_spikes": 226935,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "7d4d8e39ca7ede5a70589b41defa8c67b398b4196da90b956d88db874522aa66"
+  },
+  {
+    "recording": "WT_DIV63_P1_B2",
+    "n_spikes": 171183,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "b3e6cacf7384d04f12cf9b2ab93679e7db9222d5bd4f5d4429efab8b342244cd"
+  },
+  {
+    "recording": "WT_DIV63_P1_B3",
+    "n_spikes": 336104,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "59ff06b41efefb543b3a36880e8869dc54d2539db65bb0116bc75d1a7cfcc78e"
+  },
+  {
+    "recording": "WT_DIV63_P2_A1",
+    "n_spikes": 106468,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "bf6e78105923c04f07179f6912a1f8679c61774ef2ef633bf158cefb5d6e4feb"
+  },
+  {
+    "recording": "WT_DIV63_P2_A2",
+    "n_spikes": 70642,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "280886df54694195e2e3e7123ef1dc5c7a0b5f76e8a3cfca81ca814b7166282f"
+  },
+  {
+    "recording": "WT_DIV63_P2_A3",
+    "n_spikes": 107878,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "1acad1a07ee0d5e02610b1509ba471a4dbd0f904366dd767accdc4a90c12af98"
+  },
+  {
+    "recording": "WT_DIV63_P2_B1",
+    "n_spikes": 60924,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f1dd395c8fa0b4c810f21475faed61107128267bed7532ee7f458440fe28744d"
+  },
+  {
+    "recording": "WT_DIV63_P2_B2",
+    "n_spikes": 149938,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "e45d9652e9e7537f807586841e77e073df1550894498eecd83ddee27b1dcdd30"
+  },
+  {
+    "recording": "WT_DIV63_P2_B3",
+    "n_spikes": 203687,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "f2b5f63d42da76768e6768fdff7497bf06ecf9012641f9a30f84a0ea924b8121"
+  },
+  {
+    "recording": "WT_DIV63_P3_A1",
+    "n_spikes": 8109,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "234e83be240021ed0eec8372b2f801c54766887a574260dad15248bc9c854c5b"
+  },
+  {
+    "recording": "WT_DIV63_P3_A2",
+    "n_spikes": 13652,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "27235eb0bfa2d87a3413295e15c18b0e47b28f0041c122fd3f9b5e6519b95a91"
+  },
+  {
+    "recording": "WT_DIV63_P3_A3",
+    "n_spikes": 6302,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "2e2f550fe07a3b164489af1c852ff206b2ef0e519b6b57775b61729b880200ce"
+  },
+  {
+    "recording": "WT_DIV63_P3_B1",
+    "n_spikes": 22505,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "593508c55cbb52ecad89911d4bb20a5119887ebf7a7d2ccbedf0d4e023e3bc90"
+  },
+  {
+    "recording": "WT_DIV63_P3_B2",
+    "n_spikes": 8485,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "bd14a07522d8a30951957d9b6d22469704a9296487651cc7e8ff189247ef86f9"
+  },
+  {
+    "recording": "WT_DIV63_P3_B3",
+    "n_spikes": 4197,
+    "exact_float64_roundtrip": true,
+    "exact_electrode_roundtrip": true,
+    "source_arrays_sha256": "1030d35906d82b7fde1ef108ae77b2d40e4063f4d8853612d7cab258b8384aa9"
+  }
+]

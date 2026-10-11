@@ -1,0 +1,206 @@
+[
+  {
+    "outcome": "log1p_absolute_residual_mass",
+    "tier": "tier1_mean_k",
+    "method": "mixedlm",
+    "selected_activity_form": "log1p",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "log1p",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity_log1p",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 2.0017600782126314e-11
+    }
+  },
+  {
+    "outcome": "log1p_absolute_residual_mass",
+    "tier": "tier2_activity_burst",
+    "method": "mixedlm",
+    "selected_activity_form": "log1p",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "log1p",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [
+        "mean_firing_rate_hz_all",
+        "network_burst_rate_per_min",
+        "frac_spikes_in_network_bursts"
+      ],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity_log1p + _covariate_0 + _covariate_1 + _covariate_2",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 4.274179269674195e-11
+    }
+  },
+  {
+    "outcome": "absolute_residual_z",
+    "tier": "tier1_mean_k",
+    "method": "mixedlm",
+    "selected_activity_form": "linear",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "linear",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.5839820019123363e-09
+    }
+  },
+  {
+    "outcome": "absolute_residual_z",
+    "tier": "tier2_activity_burst",
+    "method": "mixedlm",
+    "selected_activity_form": "linear",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "linear",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [
+        "mean_firing_rate_hz_all",
+        "network_burst_rate_per_min",
+        "frac_spikes_in_network_bursts"
+      ],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity + _covariate_0 + _covariate_1 + _covariate_2",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 7.274018780552856e-08
+    }
+  },
+  {
+    "outcome": "positive_residual_z",
+    "tier": "tier1_mean_k",
+    "method": "mixedlm",
+    "selected_activity_form": "linear",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "linear",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 4.8700487940736026e-08
+    }
+  },
+  {
+    "outcome": "positive_residual_z",
+    "tier": "tier2_activity_burst",
+    "method": "mixedlm",
+    "selected_activity_form": "linear",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "linear",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [
+        "mean_firing_rate_hz_all",
+        "network_burst_rate_per_min",
+        "frac_spikes_in_network_bursts"
+      ],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity + _covariate_0 + _covariate_1 + _covariate_2",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 7.2740187808893e-08
+    }
+  },
+  {
+    "outcome": "h1_persistence_deviation_z",
+    "tier": "tier1_mean_k",
+    "method": "mixedlm",
+    "selected_activity_form": "log1p",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "log1p",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity_log1p",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 4.5176589454795325e-07
+    }
+  },
+  {
+    "outcome": "h1_persistence_deviation_z",
+    "tier": "tier2_activity_burst",
+    "method": "mixedlm",
+    "selected_activity_form": "log1p",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "log1p",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [
+        "mean_firing_rate_hz_all",
+        "network_burst_rate_per_min",
+        "frac_spikes_in_network_bursts"
+      ],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + _activity_log1p + _covariate_0 + _covariate_1 + _covariate_2",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.2149073821732765e-07
+    }
+  },
+  {
+    "outcome": "h1_infinite_deviation_z",
+    "tier": "tier1_mean_k",
+    "method": "mixedlm",
+    "selected_activity_form": "spline",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "spline",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + bs(_activity, df=3, degree=2, include_intercept=False)",
+      "optimizer": "lbfgs",
+      "warnings": [
+        "Random effects covariance is singular",
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 2.509345458378027e-07
+    }
+  },
+  {
+    "outcome": "h1_infinite_deviation_z",
+    "tier": "tier2_activity_burst",
+    "method": "mixedlm",
+    "selected_activity_form": "spline",
+    "n_observations": 142,
+    "details": {
+      "activity_form": "spline",
+      "activity_col": "mean_k_top16",
+      "additional_covariates": [
+        "mean_firing_rate_hz_all",
+        "network_burst_rate_per_min",
+        "frac_spikes_in_network_bursts"
+      ],
+      "formula": "_outcome ~ C(_div, Treatment(reference=14)) + C(_culture) + bs(_activity, df=3, degree=2, include_intercept=False) + _covariate_0 + _covariate_1 + _covariate_2",
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 1.0751922860964268e-11
+    }
+  }
+]

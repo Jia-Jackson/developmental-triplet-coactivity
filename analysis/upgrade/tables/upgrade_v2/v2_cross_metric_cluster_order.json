@@ -1,0 +1,12 @@
+{
+  "metric_order": [
+    "residual_projection",
+    "oinfo_deviation_projection_bits",
+    "oinfo_projection_bits",
+    "absolute_residual_projection",
+    "pair_support_probability",
+    "triplet_support_projection"
+  ],
+  "distance": "sqrt(2*(1-median Spearman rho))",
+  "linkage": "average"
+}

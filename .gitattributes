@@ -1,0 +1,5 @@
+# Preserve exact bytes so release checksums also work after a cross-platform clone.
+* -text
+*.csv.gz binary
+*.mat binary
+*.npz binary

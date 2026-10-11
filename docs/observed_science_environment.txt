@@ -1,0 +1,14 @@
+# Observed local science environment, not an automatic installation command.
+# Python 3.12.13, Windows AMD64; queried 2026-09-12.
+numpy==2.5.2
+scipy==1.18.1
+pandas==3.0.5
+matplotlib==3.11.1
+scikit-learn==1.9.0
+statsmodels==0.15.0
+gudhi==3.13.0
+PyYAML==6.0.3
+pytest==9.1.1
+Pillow==12.3.0
+# Native MATLAB, Axion reader and maxent_toolbox are separately required.
+# maxent_toolbox source commit: 82b4528675fed43beb1d90a1c06b43189afe023e

@@ -1,0 +1,7 @@
+analysis,contrast,estimate,standardized_effect,adjusted_p,note
+Hierarchical direct triplet support,DIV14 to DIV21,0.0213369926376799,1.6500512342521212,5.190842574434648e-06,Positive median change in 3/3 independent cultures
+Tier-2 adjusted absolute_residual_z,DIV14 to DIV21,-3.8370829887549056,-1.0522399190515042,0.0712792299931089,"Adjusted for mean K, firing, network-burst rate, and burst participation"
+Tier-2 adjusted h1_persistence_deviation_z,DIV14 to DIV21,-2.649081524080205,-0.226677783309383,0.5727263927958655,"Adjusted for mean K, firing, network-burst rate, and burst participation"
+Tier-2 adjusted h1_infinite_deviation_z,DIV14 to DIV21,0.6336610968362827,2.058846512979521,8.993517178405399e-06,"Adjusted for mean K, firing, network-burst rate, and burst participation"
+"Incremental prediction (DIV14_63, culture-out)",prior 27 minus augmented MAE,1.288988247751668,,,95% CI 0.127 to 2.518; 3/3 culture folds improved
+"Incremental prediction (DIV21_63, culture-out)",prior 27 minus augmented MAE,3.861929638231583,,,95% CI 1.431 to 6.244; 2/3 culture folds improved

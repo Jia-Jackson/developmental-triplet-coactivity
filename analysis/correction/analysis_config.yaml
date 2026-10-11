@@ -1,0 +1,86 @@
+project: higher-order-topology-development
+input_spk_directory: "raw_spk"
+result_directory: "analysis/correction"
+# This file retains the original analysis definitions. Executable code, actual
+# recording manifests and computational_closure_v2 settings specify the corrected run.
+design:
+  genotype: WT
+  div: [14, 21, 28, 35, 42, 49, 56, 63]
+  plates: 3
+  wells_per_plate: 6
+  intended_recordings_per_div: 18
+  retained_recordings: 143
+  excluded_recording: WT_DIV35_P2_A1
+  recording_duration_s: 300 # Nominal only; actual 299.75/300 s is read per record, never padded.
+  electrodes_per_well: 64
+encoding:
+  primary_bin_ms: 25
+  sensitivity_bin_ms: [10, 25, 50, 100]
+  interval_convention: half-open
+  active_electrode_min_rate_hz: 0.01
+direct_higher_order:
+  maximum_simplex_order: 3 # Number of vertices; triplets are dimension-2 simplices.
+  repeated_triplet_min_count: 5
+  filtration_time: "1 - simplex_support"
+  homology_dimensions: [0, 1]
+  infinite_interval_cap: 1.0
+burst_stratification:
+  algorithm: adaptive inter-spike-interval network-burst detector
+  minimum_spikes: 10
+  minimum_electrodes: 3
+maximum_entropy:
+  implementation: maxent_toolbox 1.0.2
+  git_commit: 82b4528675fed43beb1d90a1c06b43189afe023e
+  model: pairwise binary maximum entropy
+  primary_model_electrodes: 16
+  electrode_selection: highest active-bin counts among electrodes with at least 20 active and 20 inactive bins
+  exact_fit: true
+  null_blocks: 20 # Legacy comparator and 20*T native source pool; not the main ensemble size.
+  bins_per_null_block: 12000 # Nominal only; source pools use the actual number of bins T.
+  qc:
+    solver_converged_required: true
+    firing_probability_rmse_max: 0.02
+    pairwise_moment_rmse_max: 0.02
+    population_count_rmse_is_diagnostic_only: true
+  conservative_null: "P2(x | K(t)); exact observed population count retained in every bin"
+statistics:
+  primary_adjacent_test: paired two-sided Wilcoxon signed-rank # Legacy direct summary only; current longitudinal figures use v2 mixed-effects contrasts.
+  omnibus_test: Friedman test on complete longitudinal subjects
+  null_deviation_test: one-sided one-sample Wilcoxon signed-rank versus zero
+  multiplicity: Benjamini-Hochberg within prespecified comparison families
+  alpha: 0.05
+figures:
+  backend: Python matplotlib
+  width_in: 7.2
+  formats: [svg, pdf, png, tiff]
+  tiff_dpi: 600
+computational_closure_v2:
+  version: 2.0
+  random_seed: 20260828
+  prior_feature_matrix: "analysis/correction/data_intermediate/baseline_bridge/WT_development_original27_corrected_globalmedian_compat.csv"
+  prior_feature_preprocessing: original27_corrected_globalmedian_compat_v1
+  prior_feature_preprocessing_limitation: "Global feature medians use all 143 retained recordings; corrected masks are pooled and DIV-dependent. This preserves original preprocessing compatibility and is not leakage-free predictive validation."
+  legacy_report_sha256: "68f02accaa38c08fe68ba88fae0d0fa09943bbd980f02589a9bf5d5b8a669029"
+  culture_is_independent_preparation: true
+  culture_effect: fixed
+  repeated_subject: well_nested_within_culture
+  fixed_node_counts: [12, 16, 20]
+  fixed_node_ranking: maximin_active_bin_count_then_total_then_electrode_index
+  null_realizations: 100
+  minimum_valid_null_realizations: 90 # Producer minimum; final loader requires exactly 100 valid references.
+  incremental_value:
+    primary_baseline: previous_27_nonredundant_features
+    sensitivity_baseline: firing_bursting_sttc
+    primary_outer_cv: leave_one_culture_out
+    secondary_outer_cv: leave_one_well_out
+    outcomes: [DIV14_63_continuous, DIV21_63_continuous]
+  exact_n20_resource_rule:
+    benchmark_recordings: 3
+    maximum_peak_memory_fraction: 0.70
+    maximum_minutes_per_recording: 60
+    maximum_projected_total_hours: 72
+  stability:
+    bin_ms: [10, 25, 50, 100]
+    halves_s: 150
+    cumulative_duration_s: [60, 120, 180, 240, 300]
+  output_suffix: computational_closure_v2

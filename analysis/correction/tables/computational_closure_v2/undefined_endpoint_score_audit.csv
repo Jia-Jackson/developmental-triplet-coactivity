@@ -1,0 +1,2 @@
+recording,DIV,plate,culture,well,subject_id,model,metric,observed,null_mean,null_sd,z,empirical_p,n_null_blocks,monte_carlo_se_mean,z_available,z_unavailable_reason
+WT_DIV63_P3_A1,63,3,P3,A1,P3_A1,kinetic_conditioned_k,h1_infinite_count,1.0,0.0,0.0,,0.0099009900990099,100,0.0,False,zero_null_variance_observed_differs

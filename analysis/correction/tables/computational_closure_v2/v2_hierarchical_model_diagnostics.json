@@ -1,0 +1,487 @@
+[
+  {
+    "family": "direct_25ms",
+    "outcome": "mean_population_count",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 1.6415072264978017,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 7.166596232169222e-10
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "fraction_bins_k_ge_3",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.09172118226909669,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 8.981917220020397e-13
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "pair_occurrence_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.09028550984355695,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 8.232426298022585e-13
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "triplet_occurrence_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.17855774678423963,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 3.1883065845986634e-12
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "triplet_repeated5_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.20759684844346726,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 4.311512100870293e-12
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "pair_support_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.016606522178649233,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 2.8241714028011784e-14
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "triplet_support_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.01293110916483197,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.4095724069207644e-13
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "h0_total_persistence_capped",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.3130363288405943,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 0.002518935081552808
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "h1_total_persistence_capped",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 1.2470703097329523,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [],
+      "random_intercept_variance": 0.018071933437074666
+    }
+  },
+  {
+    "family": "direct_25ms",
+    "outcome": "h1_infinite_count",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 17.12854554342112,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.2349782977581945e-07
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "positive_residual_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.00043643110287273283,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 8.913462228282565e-16
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "negative_residual_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.0004364311028727316,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 8.913462227157782e-16
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "absolute_residual_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.0008728032253118836,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "lbfgs",
+      "warnings": [
+        "Random effects covariance is singular",
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 2.2245400404464483e-10
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "log1p_absolute_residual_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.7111591357175324,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 6.31527647452997e-11
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "rms_residual",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.001120868194272457,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 6.4752001064357986e-15
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "positive_residual_z",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 4.485414156082035,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 4.039489938326003e-08
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "negative_residual_z",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 4.485414158955155,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 2.2514411444706944e-09
+    }
+  },
+  {
+    "family": "conditioned_triplet_residual",
+    "outcome": "absolute_residual_z",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 4.485414156082036,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 4.039489938369245e-08
+    }
+  },
+  {
+    "family": "conditioned_topology_deviation",
+    "outcome": "z_h1_infinite_count",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.3410761019314571,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 2.1932236282684124e-10
+    }
+  },
+  {
+    "family": "conditioned_topology_deviation",
+    "outcome": "z_h1_total_persistence_capped",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 12.556938877422628,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 5.332776230801885e-07
+    }
+  },
+  {
+    "family": "conditioned_topology_deviation",
+    "outcome": "z_triplet_repeated5_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 1.1788534844008967,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space.",
+        "The Hessian matrix at the estimated parameter values is not positive definite."
+      ],
+      "random_intercept_variance": 4.294431644129467e-09
+    }
+  },
+  {
+    "family": "conditioned_topology_deviation",
+    "outcome": "z_triplet_support_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.8546488272014824,
+    "n_observations": 142,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 7.395120007541717e-11
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_mean_population_count",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 15.681324953356825,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 2.45922258984498e-08
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_fraction_bins_k_ge_3",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.16053203689947823,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.1266888450667088e-10
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_triplet_occurrence_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.4240464851012672,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "lbfgs",
+      "warnings": [
+        "Random effects covariance is singular",
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 2.2163961905981454e-33
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_triplet_repeated5_density",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.3570608474563635,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 1.8501728703977854e-11
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_triplet_support_mass",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 0.19814305196340898,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [
+        "The MLE may be on the boundary of the parameter space."
+      ],
+      "random_intercept_variance": 3.9294429335574875e-12
+    }
+  },
+  {
+    "family": "burst_inside_outside_difference",
+    "outcome": "inside_minus_outside_h1_total_persistence_capped",
+    "method": "mixedlm",
+    "converged": true,
+    "residual_scale": 4.9850187761595866,
+    "n_observations": 143,
+    "n_subjects": 18,
+    "n_cultures": 3,
+    "details": {
+      "optimizer": "powell",
+      "warnings": [],
+      "random_intercept_variance": 4.313167345432932
+    }
+  }
+]

@@ -6,12 +6,38 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        file:
+          - repository_upload.zip
+          - analysis_inputs_and_checkpoints.zip
+          - raw_spk_DIV14.zip
+          - raw_spk_DIV21.zip
+          - raw_spk_DIV28.zip
+          - raw_spk_DIV35.zip
+          - raw_spk_DIV42.zip
+          - raw_spk_DIV49.zip
+          - raw_spk_DIV56.zip
+          - raw_spk_DIV63.zip
     steps:
       - uses: actions/checkout@v4
       - name: Install transfer dependency
         run: python3 -m pip install --quiet requests
-      - name: Verify, transfer, and publish the manuscript archive
+      - name: Verify and transfer one manuscript file
         env:
           ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
-        run: python3 -u .github/scripts/zenodo_archive.py
+        run: python3 -u .github/scripts/zenodo_archive.py --file "${{ matrix.file }}"
+  publish:
+    needs: archive
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install --quiet requests
+      - name: Verify all files and metadata then publish
+        env:
+          ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
+        run: python3 -u .github/scripts/zenodo_archive.py --publish

@@ -5,6 +5,7 @@ Never resets a completed file, changes the scientific tag, or edits metadata.
 """
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import hashlib
+import argparse
 import json
 import os
 from pathlib import Path
@@ -108,12 +109,12 @@ def transfer(expected, asset, path, entry):
             'header = ' + quote('Authorization: Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN']),
             'header = "Content-Type: application/octet-stream"',
             'header = "Expect: 100-continue"', 'expect100-timeout = 3',
-            'connect-timeout = 30', 'max-time = 900', 'http1.1', 'silent', 'show-error',
+            'connect-timeout = 30', 'max-time = 5400', 'http1.1', 'silent', 'show-error',
             'write-out = "\\n%{http_code} %{size_upload} %{speed_upload}"',
         ]) + '\n'
         print('Starting Zenodo transfer: ' + name, flush=True)
         result = subprocess.run(['curl', '-q', '--config', '-'], input=configuration.encode(),
-                                capture_output=True, timeout=930)
+                                capture_output=True, timeout=5430)
         output = result.stdout.decode(errors='replace')
         transfer_summary = output.rsplit('\n', 1)[-1].split()
         status = int(transfer_summary[0]) if transfer_summary else 0
@@ -139,7 +140,14 @@ def transfer(expected, asset, path, entry):
         entry = initialize(expected)
 
 
-def main():
+def select_expected(manifest, name):
+    matching = [item for item in manifest if item['key'] == name]
+    if len(matching) != 1:
+        raise ValueError('Only a verified manuscript file may be transferred')
+    return matching[0]
+
+
+def main(one_file=None, publish=False):
     global requests
     import requests
     manifest = json.loads(Path(__file__).with_name('zenodo_manifest.json').read_text())
@@ -150,12 +158,6 @@ def main():
     if public.ok:
         print('Record is already public; no archive mutation performed', flush=True)
         return
-    deposits = api('https://zenodo.org/api/deposit/depositions')
-    deposit = next(item for item in deposits if str(item['id']) == RECORD)
-    metadata = deposit['metadata']
-    if (deposit.get('submitted') or not metadata['title'].startswith('Developmental triplet coactivity')
-            or len(metadata['creators']) != 6 or metadata.get('version') != '1.0.0'):
-        raise ValueError('Unexpected manuscript metadata or publication state')
     release = requests.get(f'https://api.github.com/repos/{REPO}/releases/tags/v1.0.0', timeout=60).json()
     tag = requests.get(f'https://api.github.com/repos/{REPO}/git/ref/tags/v1.0.0', timeout=60).json()
     if release.get('draft') or tag.get('object', {}).get('sha') != COMMIT:
@@ -169,24 +171,26 @@ def main():
             raise ValueError('Public release digest mismatch')
     if any(item['key'] not in assets for item in entries()):
         raise ValueError('Unexpected archive entry; no files changed')
-    prepared = {item['key']: initialize(item) for item in manifest}
-    with tempfile.TemporaryDirectory(prefix='verified-manuscript-archive-') as folder:
-        with ThreadPoolExecutor(max_workers=3) as pool:
-            futures = [pool.submit(transfer, item, assets[item['key']],
-                                   Path(folder) / item['key'], prepared[item['key']]) for item in manifest]
-            for future in as_completed(futures):
-                try:
-                    future.result()
-                except Exception as error:
-                    print(f'Transfer failed promptly: {type(error).__name__}: {error}', flush=True)
-                    for pending in futures:
-                        pending.cancel()
-                    raise
+    if one_file:
+        expected = select_expected(manifest, one_file)
+        prepared = initialize(expected)
+        with tempfile.TemporaryDirectory(prefix='verified-manuscript-archive-') as folder:
+            transfer(expected, assets[one_file], Path(folder) / one_file, prepared)
+        return
+    if not publish:
+        raise ValueError('Choose one verified file or the final publication check')
     completed = {item['key']: item for item in entries()}
     if set(completed) != set(assets):
         raise ValueError('Final archive set mismatch')
     for item in manifest:
         validate_completed(completed[item['key']], item)
+    # Read metadata only after every file has stored size/checksum. This avoids
+    # serialization problems for incomplete drafts; publication still checks it.
+    record = api(BASE)
+    metadata = record['metadata']
+    if (record.get('is_published') or not metadata['title'].startswith('Developmental triplet coactivity')
+            or len(metadata['creators']) != 6 or metadata.get('version') != '1.0.0'):
+        raise ValueError('Unexpected manuscript metadata or publication state')
     published = api(BASE + '/actions/publish', 'POST')
     if not published.get('is_published'):
         raise RuntimeError('Publication was not confirmed by Zenodo')
@@ -196,4 +200,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    arguments = argparse.ArgumentParser()
+    modes = arguments.add_mutually_exclusive_group(required=True)
+    modes.add_argument('--file')
+    modes.add_argument('--publish', action='store_true')
+    args = arguments.parse_args()
+    main(args.file, args.publish)

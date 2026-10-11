@@ -36,6 +36,12 @@ def validate_complete(entry, expected):
     archive.validate_completed(entry, expected)
 
 
+def is_empty_owned_standard(entry, name):
+    return (entry.get('key') == name and entry.get('status') == 'pending'
+            and entry.get('size') in (None, 0) and not entry.get('checksum')
+            and entry.get('transfer', {}).get('type') == 'L')
+
+
 def manifest():
     return json.loads(Path(__file__).with_name('zenodo_portable_manifest.json').read_text())
 
@@ -82,7 +88,7 @@ def standard_upload(expected, payload):
             'header = "Content-Type: application/octet-stream"', 'header = "Expect: 100-continue"',
             'expect100-timeout = 3', 'connect-timeout = 30', 'max-time = 900',
             'http1.1', 'silent', 'show-error', 'write-out = "\\n%{http_code} %{size_upload}"']) + '\n'
-        for attempt in range(3):
+        for attempt in range(4):
             import time
             result = subprocess.run(['curl', '-q', '--config', '-'], input=config.encode(),
                                     capture_output=True, timeout=930)
@@ -104,8 +110,15 @@ def standard_upload(expected, payload):
             if current.get('checksum') == expected['md5'] and current.get('size') == expected['size']:
                 validate_complete(archive.api(current['links']['commit'], 'POST'), expected)
                 return
+            if status == 400 and is_empty_owned_standard(current, expected['key']):
+                # Only this worker's failed empty ordinary-upload entry can
+                # retain a server-side upload lock after a gateway timeout.
+                archive.api(BASE + '/files/' + urllib.parse.quote(expected['key']), 'DELETE')
+                initialized = archive.api(BASE + '/files', 'POST', [{'key': expected['key']}])
+                found = next(entry for entry in initialized['entries'] if entry['key'] == expected['key'])
+                print('Reset only failed empty owned volume: ' + expected['key'], flush=True)
             print(f'Ordinary upload retry {expected["key"]}: HTTP {status}, curl {result.returncode}', flush=True)
-            if attempt == 2:
+            if attempt == 3:
                 raise RuntimeError('Bounded standard upload retries exhausted')
             time.sleep(20)
 

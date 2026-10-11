@@ -1,6 +1,11 @@
 name: Archive verified manuscript release on Zenodo
 on:
   workflow_dispatch:
+    inputs:
+      files:
+        description: 'Verified original ZIP names to resume (JSON array)'
+        required: true
+        default: '["analysis_inputs_and_checkpoints.zip","raw_spk_DIV21.zip","raw_spk_DIV28.zip","raw_spk_DIV35.zip","raw_spk_DIV42.zip","raw_spk_DIV56.zip","raw_spk_DIV63.zip"]'
 permissions:
   contents: read
 jobs:
@@ -11,14 +16,7 @@ jobs:
       fail-fast: false
       max-parallel: 7
       matrix:
-        file:
-          - analysis_inputs_and_checkpoints.zip
-          - raw_spk_DIV21.zip
-          - raw_spk_DIV28.zip
-          - raw_spk_DIV35.zip
-          - raw_spk_DIV42.zip
-          - raw_spk_DIV56.zip
-          - raw_spk_DIV63.zip
+        file: ${{ fromJSON(inputs.files) }}
     steps:
       - uses: actions/checkout@v4
       - name: Install transfer dependency

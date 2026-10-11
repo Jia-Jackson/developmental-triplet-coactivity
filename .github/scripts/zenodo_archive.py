@@ -72,8 +72,8 @@ def api(url, method='GET', value=None):
                                     headers={'Authorization': 'Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN']},
                                     timeout=120)
         if response.status_code in (429, 500, 502, 503, 504) and attempt < 4:
-            print(f'Archive API HTTP {response.status_code}; bounded retry', flush=True)
-            time.sleep(10)
+            print(f'Archive API {method} HTTP {response.status_code}; bounded retry', flush=True)
+            time.sleep(15 * (attempt + 1) if response.status_code == 429 else 10)
             continue
         if not response.ok:
             raise RuntimeError(f'Archive API {method} returned HTTP {response.status_code}')
@@ -82,6 +82,23 @@ def api(url, method='GET', value=None):
 
 def entries():
     return api(BASE + '/files')['entries']
+
+
+def github_read(path):
+    headers = {'User-Agent': 'verified-manuscript-archive'}
+    token = os.environ.get('GH_ARCHIVE_VERIFICATION_TOKEN')
+    if token:
+        headers['Authorization'] = 'Bearer ' + token
+    url = f'https://api.github.com/repos/{REPO}/' + path
+    for attempt in range(4):
+        response = requests.get(url, headers=headers, timeout=60)
+        if response.status_code == 200:
+            return response.json()
+        if response.status_code in (403, 429, 500, 502, 503, 504) and attempt < 3:
+            print(f'GitHub verification HTTP {response.status_code}; bounded retry', flush=True)
+            time.sleep(20)
+            continue
+        raise RuntimeError(f'GitHub verification unavailable: HTTP {response.status_code}; scientific files were not changed')
 
 
 def initialize(expected):
@@ -154,7 +171,7 @@ def multipart_transfer(expected, path, entry):
             print(f'Retrying only transport part {number} of {expected["key"]}: HTTP {status}, curl {response.returncode}', flush=True)
             if attempt == 3:
                 raise RuntimeError('Multipart transport failed; no signed URL or credential displayed')
-            time.sleep(8)
+            time.sleep(20 * (attempt + 1) if status == 429 else 8)
 
     print(f'Multipart upload {expected["key"]}: {len(ranges)} transport parts', flush=True)
     count = 0
@@ -254,8 +271,8 @@ def main(one_file=None, publish=False):
     if public.ok:
         print('Record is already public; no archive mutation performed', flush=True)
         return
-    release = requests.get(f'https://api.github.com/repos/{REPO}/releases/tags/v1.0.0', timeout=60).json()
-    tag = requests.get(f'https://api.github.com/repos/{REPO}/git/ref/tags/v1.0.0', timeout=60).json()
+    release = github_read('releases/tags/v1.0.0')
+    tag = github_read('git/ref/tags/v1.0.0')
     if release.get('draft') or tag.get('object', {}).get('sha') != COMMIT:
         raise ValueError('Scientific release changed')
     assets = {item['name']: item for item in release['assets']}

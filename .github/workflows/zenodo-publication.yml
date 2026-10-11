@@ -29,6 +29,7 @@ jobs:
       - name: Verify and transfer one manuscript file
         env:
           ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
+          GH_ARCHIVE_VERIFICATION_TOKEN: ${{ github.token }}
         run: python3 -u .github/scripts/zenodo_archive.py --file "${{ matrix.file }}"
   publish:
     needs: archive
@@ -40,4 +41,5 @@ jobs:
       - name: Verify all files and metadata then publish
         env:
           ZENODO_ARCHIVE_TOKEN: ${{ secrets.ZENODO_MANUSCRIPT_ARCHIVE_TOKEN }}
+          GH_ARCHIVE_VERIFICATION_TOKEN: ${{ github.token }}
         run: python3 -u .github/scripts/zenodo_archive.py --publish

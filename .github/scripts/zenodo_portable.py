@@ -42,6 +42,25 @@ def is_empty_owned_standard(entry, name):
             and entry.get('transfer', {}).get('type') == 'L')
 
 
+def initialize_standard(expected):
+    found = next((entry for entry in archive.entries() if entry['key'] == expected['key']), None)
+    if found is None:
+        try:
+            initialized = archive.api(BASE + '/files', 'POST', [{'key': expected['key']}])
+            found = next(entry for entry in initialized['entries'] if entry['key'] == expected['key'])
+        except RuntimeError:
+            # A gateway error may hide successful creation. Reconcile via the
+            # same owner-authorized API rather than creating a duplicate key.
+            found = next((entry for entry in archive.entries() if entry['key'] == expected['key']), None)
+            if found is None:
+                raise
+    if found['status'] == 'completed':
+        validate_complete(found, expected)
+    elif found.get('status') != 'pending' or found.get('transfer', {}).get('type') != 'L':
+        raise ValueError('Unexpected ordinary upload entry state')
+    return found
+
+
 def manifest():
     return json.loads(Path(__file__).with_name('zenodo_portable_manifest.json').read_text())
 
@@ -65,13 +84,10 @@ def standard_upload(expected, payload):
     digest = 'md5:' + hashlib.md5(payload).hexdigest()
     if len(payload) != expected['size'] or digest != expected['md5']:
         raise ValueError('Local portable-volume bytes differ')
-    found = next((entry for entry in archive.entries() if entry['key'] == expected['key']), None)
+    found = initialize_standard(expected)
     if found and found['status'] == 'completed':
         validate_complete(found, expected)
         return
-    if found is None:
-        initialized = archive.api(BASE + '/files', 'POST', [{'key': expected['key']}])
-        found = next(entry for entry in initialized['entries'] if entry['key'] == expected['key'])
     if found.get('transfer', {}).get('type') != 'L' or found.get('status') != 'pending':
         raise ValueError('Standard upload entry has an unexpected transfer state')
     endpoint = found['links']['content']

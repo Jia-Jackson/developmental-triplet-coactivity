@@ -8,6 +8,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import subprocess
 import tempfile
 import time
 import urllib.parse
@@ -99,11 +100,28 @@ def transfer(expected, asset, path, entry):
         if (urllib.parse.urlparse(endpoint).hostname != 'zenodo.org'
                 or not urllib.parse.urlparse(endpoint).path.startswith(f'/api/records/{RECORD}/draft/files/')):
             raise ValueError('Unexpected file transfer endpoint')
-        with path.open('rb') as stream:
-            response = requests.put(endpoint, data=stream, timeout=(30, 1800),
-                                    headers={'Authorization': 'Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN'],
-                                             'Content-Type': 'application/octet-stream'})
-        if response.ok:
+        # curl reads early HTTP rejection before sending the whole large file.
+        # Its bearer credential is supplied only through an anonymous stdin pipe.
+        quote = lambda text: '"' + str(text).replace('\\', '\\\\').replace('"', '\\"') + '"'
+        configuration = '\n'.join([
+            'url = ' + quote(endpoint), 'request = "PUT"', 'upload-file = ' + quote(path),
+            'header = ' + quote('Authorization: Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN']),
+            'header = "Content-Type: application/octet-stream"',
+            'header = "Expect: 100-continue"', 'expect100-timeout = 3',
+            'connect-timeout = 30', 'max-time = 900', 'http1.1', 'silent', 'show-error',
+            'write-out = "\\n%{http_code} %{size_upload} %{speed_upload}"',
+        ]) + '\n'
+        print('Starting Zenodo transfer: ' + name, flush=True)
+        result = subprocess.run(['curl', '-q', '--config', '-'], input=configuration.encode(),
+                                capture_output=True, timeout=930)
+        output = result.stdout.decode(errors='replace')
+        transfer_summary = output.rsplit('\n', 1)[-1].split()
+        status = int(transfer_summary[0]) if transfer_summary else 0
+        detail = result.stderr.decode(errors='replace').replace(os.environ['ZENODO_ARCHIVE_TOKEN'], '[REDACTED]')
+        if not result.returncode and status in (200, 201):
+            if int(transfer_summary[1]) != expected['size']:
+                raise ValueError('Transmitted-byte count mismatch')
+            print(f'Transferred {name}: {float(transfer_summary[2])/1024:.1f} KiB/s', flush=True)
             committed = api(entry['links']['commit'], 'POST')
             validate_completed(committed, expected)
             print('Archived and checksum-verified: ' + name, flush=True)
@@ -113,8 +131,11 @@ def transfer(expected, asset, path, entry):
             validate_completed(current, expected)
             return
         if attempt == 2:
-            raise RuntimeError(f'Archive transfer HTTP {response.status_code}: {name}')
-        print(f'Archive transfer HTTP {response.status_code}: resetting only the empty pending entry for {name}', flush=True)
+            raise RuntimeError(f'Archive transfer HTTP {status}, curl {result.returncode}: {name}; {detail[:200]}')
+        print(f'Archive transfer HTTP {status}, curl {result.returncode}: {name}; {detail[:200]}', flush=True)
+        body = output.rsplit('\n', 1)[0].replace(os.environ['ZENODO_ARCHIVE_TOKEN'], '[REDACTED]')
+        if status >= 400:
+            print('Archive response: ' + body[:300], flush=True)
         entry = initialize(expected)
 
 
@@ -154,7 +175,13 @@ def main():
             futures = [pool.submit(transfer, item, assets[item['key']],
                                    Path(folder) / item['key'], prepared[item['key']]) for item in manifest]
             for future in as_completed(futures):
-                future.result()
+                try:
+                    future.result()
+                except Exception as error:
+                    print(f'Transfer failed promptly: {type(error).__name__}: {error}', flush=True)
+                    for pending in futures:
+                        pending.cancel()
+                    raise
     completed = {item['key']: item for item in entries()}
     if set(completed) != set(assets):
         raise ValueError('Final archive set mismatch')

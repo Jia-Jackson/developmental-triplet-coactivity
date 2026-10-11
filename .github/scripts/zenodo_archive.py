@@ -69,7 +69,8 @@ def api(url, method='GET', value=None):
         raise ValueError('Unexpected API host')
     for attempt in range(5):
         response = requests.request(method, url, json=value,
-                                    headers={'Authorization': 'Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN']},
+                                    headers={'Authorization': 'Bearer ' + os.environ['ZENODO_ARCHIVE_TOKEN'],
+                                             'Accept': 'application/vnd.inveniordm.v1+json'},
                                     timeout=120)
         if response.status_code in (429, 500, 502, 503, 504) and attempt < 4:
             print(f'Archive API {method} HTTP {response.status_code}; bounded retry', flush=True)
